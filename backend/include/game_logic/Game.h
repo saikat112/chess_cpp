@@ -7,6 +7,7 @@ class Game {
 public:
     Game();
     void start();
+    bool movePiece(int startX, int startY, int endX, int endY);
 
 private:
     Board board;

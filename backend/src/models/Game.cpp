@@ -1,47 +1,22 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+#include "Game.h"
+#include <iostream>
 
-const moveSchema = new Schema({
-  from: {
-    type: String,
-    required: true
-  },
-  to: {
-    type: String,
-    required: true
-  },
-  piece: {
-    type: String,
-    required: true
-  },
-  timestamp: {
-    type: Date,
-    default: Date.now
-  }
-}, {
-  _id: false
-});
+Game::Game() : currentTurn(WHITE) {
+    board.initializeBoard();
+}
 
-const gameSchema = new Schema({
-  players: [{
-    type: String,
-    required: true
-  }],
-  moves: [moveSchema],
-  status: {
-    type: String,
-    enum: ['ongoing', 'finished'],
-    default: 'ongoing'
-  },
-  result: {
-    type: String,
-    enum: ['white', 'black', 'draw', 'pending'],
-    default: 'pending'
-  }
-}, {
-  timestamps: true
-});
+void Game::start() {
+    // Starting logic if needed
+}
 
-const Game = mongoose.model('Game', gameSchema);
+bool Game::movePiece(int startX, int startY, int endX, int endY) {
+    if (board.movePiece(startX, startY, endX, endY)) {
+        switchTurn();
+        return true;
+    }
+    return false;
+}
 
-module.exports = Game;
+void Game::switchTurn() {
+    currentTurn = (currentTurn == WHITE) ? BLACK : WHITE;
+}
