@@ -49,34 +49,60 @@ my-chess-game/
 │   ├── package.json
 │
 ├── backend/
-│   ├── controllers/
-│   │   ├── userController.js
-│   │   ├── gameController.js
-│   ├── models/
-│   │   ├── User.js
-│   │   ├── Game.js
-│   ├── routes/
-│   │   ├── userRoutes.js
-│   │   ├── gameRoutes.js
-│   │   ├── graphqlRoutes.js
-│   │   ├── grpcServer.js
-│   │   ├── soapServer.js
-│   ├── graphql/
-│   │   ├── schema.js
-│   │   ├── resolvers.js
-│   ├── grpc/
-│   │   ├── chess.proto
-│   ├── soap/
-│   │   ├── chess.wsdl
-│   ├── server.js
-│   ├── package.json
-│   ├── .env
-│
-├── game-logic/
 │   ├── src/
+│   │   ├── controllers/
+│   │   │   ├── UserController.cpp
+│   │   │   ├── GameController.cpp
+│   │   ├── models/
+│   │   │   ├── User.cpp
+│   │   │   ├── Game.cpp
+│   │   ├── routes/
+│   │   │   ├── UserRoutes.cpp
+│   │   │   ├── GameRoutes.cpp
+│   │   │   ├── GRPCRoutes.cpp
+│   │   │   ├── SOAPRoutes.cpp
+│   │   ├── graphql/
+│   │   │   ├── Schema.cpp
+│   │   │   ├── Resolvers.cpp
+│   │   ├── grpc/
+│   │   │   ├── ChessService.cpp
+│   │   │   ├── chess.proto
+│   │   ├── soap/
+│   │   │   ├── ChessService.cpp
+│   │   │   ├── chess.wsdl
+│   │   ├── game-logic/
+│   │   │   ├── Game.cpp
+│   │   │   ├── Board.cpp
+│   │   │   ├── Piece.cpp
+│   │   ├── main.cpp
+│   │   ├── server.cpp
+│   │   ├── CMakeLists.txt
 │   ├── include/
-│   ├── main.cpp
+│   │   ├── controllers/
+│   │   │   ├── UserController.h
+│   │   │   ├── GameController.h
+│   │   ├── models/
+│   │   │   ├── User.h
+│   │   │   ├── Game.h
+│   │   ├── routes/
+│   │   │   ├── UserRoutes.h
+│   │   │   ├── GameRoutes.h
+│   │   │   ├── GRPCRoutes.h
+│   │   │   ├── SOAPRoutes.h
+│   │   ├── graphql/
+│   │   │   ├── Schema.h
+│   │   │   ├── Resolvers.h
+│   │   ├── grpc/
+│   │   │   ├── ChessService.h
+│   │   ├── soap/
+│   │   │   ├── ChessService.h
+│   │   ├── game-logic/
+│   │   │   ├── Game.h
+│   │   │   ├── Board.h
+│   │   │   ├── Piece.h
 │   ├── CMakeLists.txt
+│   ├── Dockerfile
+│   ├── .env
 │
 ├── redis/
 │   ├── redis.conf
